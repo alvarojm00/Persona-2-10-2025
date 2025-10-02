@@ -45,6 +45,11 @@
 
     End Sub
 
+    Public Sub New(nombre As String, apellido As String)
+        _nombre = nombre
+        _apellido = apellido
+    End Sub
+
     Public Sub New()
     End Sub
 End Class
