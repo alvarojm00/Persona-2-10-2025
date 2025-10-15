@@ -1,7 +1,19 @@
 ﻿Public Class Persona
+    Private _id As Integer
     Private _nombre As String
     Private _apellido As String
     Private _edad As Integer
+
+
+    Public Property Id As Integer
+        Get
+            Return _id
+        End Get
+        Set(value As Integer)
+            _id = value
+        End Set
+    End Property
+
 
     Public Property Nombre As String
         Get
