@@ -13,9 +13,19 @@ Public Class FormPersona
         persona.Nombre = txt_nombre.Text
         persona.Apellido = txt_apellido.Text
         persona.Edad = txt_edad.Text
-        lbl_mensaje.Text = dbHelper.create(persona)
-        GV_personas.DataBind()
 
+        'lbl_mensaje.Text = dbHelper.create(persona)
+
+
+        If dbHelper.create(persona) Then
+            lbl_mensaje.Text = "Persona Creada"
+            txt_nombre.Text = ""
+            txt_apellido.Text = ""
+            txt_edad.Text = ""
+        Else
+            lbl_mensaje.Text = "Ocurrio un error"
+        End If
+        GV_personas.DataBind()
 
     End Sub
 

@@ -5,7 +5,7 @@ Public Class DataBaseHelper
     Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("ll-46ConnectionString").ConnectionString
 
     'Crear Persona'
-    Public Function create(Persona As Persona) As String
+    Public Function create(Persona As Persona) As Boolean
         Try
             Dim sql As String = "INSERT INTO Personas (Nombre,Apellido,Edad) VALUES (@Nombre,@Apellido,@Edad)"
             Dim parametros As New List(Of SqlParameter) From {
@@ -24,9 +24,9 @@ Public Class DataBaseHelper
             End Using
 
         Catch ex As Exception
-
+            Return False
         End Try
-        Return "Persona creada"
+        Return True
     End Function
 
 
